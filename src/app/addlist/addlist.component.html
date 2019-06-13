@@ -1,0 +1,36 @@
+<div class="main">
+    <div class="header">
+        <h1>To-Do</h1>
+    </div>
+    <form [formGroup]="profileForm">
+        <div>
+            <div>
+                <label>
+                    To-Do Name:
+                    <input type="text" formControlName="todoName">
+                </label>
+            </div>
+            <div *ngIf="this.profileForm.controls['todoName'].touched && this.profileForm.controls['todoName'].hasError('required')">
+                Todo name required
+            </div>
+            <div *ngIf="this.profileForm.controls['todoName'].touched && !this.profileForm.controls['todoName'].hasError('validEmail')">
+                Please enter a valid email
+            </div>
+
+        </div>
+
+
+        <div>
+            <label>
+                Details:
+                <input type="text" formControlName="todoDetails">
+            </label>
+
+        </div>
+        <div>
+            <button routerLink="/">Home</button>
+            <button (click)="submit()" routerLink="/">Submit</button>
+        </div>
+
+    </form>
+</div>

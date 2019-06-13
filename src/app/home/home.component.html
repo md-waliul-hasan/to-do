@@ -1,0 +1,19 @@
+<div class="main">
+    <div fxLayout="row" fxLayoutAlign="space-around center">
+        <div class="header">
+            <h1>To-Do</h1>
+        </div>
+    </div>
+    <div fxLayout="row">
+        <a  routerLink="/add">Add</a>
+    </div>
+    <div>
+        <ul>
+            <li *ngFor="let item of arr; let i = index">
+                {{i}} {{"----"}}{{ item.todoName}} {{"----"}}{{item.todoDetails}}
+                <button [routerLink]="['/edit',i]" >Edit</button>
+                <button (click)="delete(i)">Delete</button>
+            </li>
+        </ul>
+    </div>
+</div>

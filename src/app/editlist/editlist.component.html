@@ -1,0 +1,26 @@
+<div class="main">
+    <div class="header">
+        <h1>To-Do</h1>
+    </div>
+    <form [formGroup]="profileForm">
+        <div>
+            <label>
+                To-Do Name:
+                <input type="text" formControlName="todoName">
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Details:
+                <input type="text" formControlName="todoDetails">
+            </label>
+
+        </div>
+        <div>
+            <button routerLink="/">Home</button>
+            <button (click)="submit()" routerLink="/">Submit</button>
+        </div>
+
+    </form>
+</div>
